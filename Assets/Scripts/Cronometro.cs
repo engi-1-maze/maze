@@ -21,4 +21,12 @@ public class Cronometro : MonoBehaviour
         activo = true;
 
     }
+    public void PararCronometro()
+    {
+        activo = false;
+    }
+    public float Tiempo()
+    {
+        return tiempo;  
+    }
 }

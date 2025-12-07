@@ -67,26 +67,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3080237173484005442, guid: 31990ecc026efc14d8d33976e5bc86ef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2406977777990028903}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31990ecc026efc14d8d33976e5bc86ef, type: 3}
---- !u!1 &3582090582246231591 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3080237173484005442, guid: 31990ecc026efc14d8d33976e5bc86ef, type: 3}
-  m_PrefabInstance: {fileID: 1948113621128619621}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2406977777990028903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3582090582246231591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8695344b819a617438e9668184d92f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CloseDoor
-  Door: {fileID: 3582090582246231591}
