@@ -24,7 +24,7 @@ public class Exit : MonoBehaviour
             if (textoLlegada != null)
             {
                 textoLlegada.gameObject.SetActive(true);
-                textoLlegada.text = "¡Has llegado!\nHas tardado " + tiempoTotal.ToString("F2") + " segundos.";
+                textoLlegada.text = "¡¡Llegaste!!\nHas tardado " + tiempoTotal.ToString("F2") + " segundos";
             }
         }
     }

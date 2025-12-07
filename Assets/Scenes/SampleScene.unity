@@ -1763,20 +1763,20 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xA1\xA1Llegaste!!\nHas tardado XX segundos"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b23d21202c5628541a5e4ab15a89d598, type: 2}
+  m_sharedMaterial: {fileID: 6003411031250534465, guid: b23d21202c5628541a5e4ab15a89d598, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280480242
-  m_fontColor: {r: 0.94716984, g: 0.9440322, b: 0.13403334, a: 1}
-  m_enableVertexGradient: 0
+    rgba: 4280450546
+  m_fontColor: {r: 0.9490196, g: 0.49157542, b: 0.13333331, a: 1}
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.78113204, g: 0.033898097, b: 0.033898097, a: 1}
+    topRight: {r: 0.8113208, g: 0.23727295, b: 0.23727295, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -1788,8 +1788,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1798,7 +1798,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1880,8 +1880,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Time> 0.00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e05883d33ad6774885a7a227081c9a4, type: 2}
+  m_sharedMaterial: {fileID: -3448633080496732429, guid: 4e05883d33ad6774885a7a227081c9a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
