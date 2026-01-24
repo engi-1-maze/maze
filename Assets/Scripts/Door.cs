@@ -4,50 +4,56 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [Header("Movement")]
-    public float down = 3f;
-    public float speed = 2f;
-    public float time = 2f;
+    [SerializeField] private float down = 5f;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private float time = 2f;
 
-    Vector3 startPos;
-    Vector3 targetPos;
+    [SerializeField] private Button button1;
+    [SerializeField] private Button button2;
+
+    private Vector3 startPos;
+    private Vector3 endPos;
 
     private Coroutine routine;
-    public bool isMoving;
-    void Start()
+    private void Awake()
     {
         startPos = transform.position;
-        targetPos = startPos+Vector3.down*down; 
+        endPos = startPos+Vector3.down*down;
     }
 
     public void TriggerOpen()
     {
-        if (routine!=null)
-        {
+        if(routine!=null)
             StopCoroutine(routine);
-            routine = StartCoroutine(OpenCloseRoutine());
-        }
+
+        if (button1 != null)
+            button1.SetActive();
+        if (button2 != null)
+            button2.SetActive();
+
+        routine = StartCoroutine(OpenCloseRoutine());
     }
-    public IEnumerator
+    private IEnumerator
         OpenCloseRoutine()
-        {
-        yield return MoveTo(targetPos);
+    {
+        yield return MoveTo(endPos);
+        if (button1 != null)
+            button1.SetInactive();
+        if (button2 != null)
+            button2.SetInactive();
         yield return new WaitForSeconds(time);
         yield return MoveTo(startPos);
 
         routine = null;
-        }
-    public IEnumerator MoveTo(Vector3 target)
-        {
-        isMoving = true;
+
+    }
+    private IEnumerator MoveTo(Vector3 target)
+    {
         while((transform.position-target).sqrMagnitude>0.0001f)
-        {
-            transform.position=Vector3.MoveTowards(transform.position,target,speed*Time.deltaTime);
+            {
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
             yield return null;
         }
-
         transform.position = target;
-        isMoving = false;
-
-        }
+    }
 }
