@@ -6,7 +6,7 @@ public class Exit : MonoBehaviour
 {
     public Cronometro cronometro;        // referencia al script del cronómetro
     public TextMeshProUGUI textoLlegada; // texto del letrero final
-    public Button play;
+    public UnityEngine.UI.Button play;
 
     bool activado = false;
 
