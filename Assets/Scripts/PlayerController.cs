@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     [Header("Movimiento")]
     public float velocidadMovimiento = 5f;
     public float velocidadGiro = 120f;
+    private float velocidadVertical = 0f;
+    public float gravedad = 9.8f;
     private CharacterController characterController;
 
     private void Start()
@@ -27,8 +29,20 @@ public class PlayerController : MonoBehaviour
         Vector3 movimientoLocal = new Vector3(0f, 0f, inputVertical * velocidadMovimiento);
 
         // Conversion de local a global
-        Vector3 movimientoMundo = transform.TransformDirection(movimientoLocal)*Time.deltaTime;
+        Vector3 movimientoMundo = transform.TransformDirection(movimientoLocal);
 
-        characterController.Move(movimientoMundo);
+        //gravedad
+        if(characterController.isGrounded)
+        {
+            velocidadVertical = -0.5f;
+        }
+        else
+        {
+            velocidadVertical-=gravedad*Time.deltaTime;
+        }
+        movimientoMundo.y=velocidadVertical;
+
+        //Movimiento player
+        characterController.Move(movimientoMundo * Time.deltaTime);
     }
 }
