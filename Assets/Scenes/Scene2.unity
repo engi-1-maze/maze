@@ -4581,6 +4581,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5896768712539786053, guid: 0342bdb51d14a8140b54adf15cdef841, type: 3}
+      propertyPath: fuerzaDeSalto
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4878,7 +4882,7 @@ MonoBehaviour:
   currentMode: 0
   target: {fileID: 1547616483}
   tpOffset: {x: 0, y: 5, z: -10}
-  fpOffset: {x: 0, y: 0.85, z: 0.2}
+  fpOffset: {x: 0, y: 1.85, z: 0.2}
   smoothSpeed: 0.125
 --- !u!1 &1676819996
 GameObject:

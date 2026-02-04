@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
-public enum PlayerState { Idle, MoveBackwards, Run, Walk, Jumping, Firing, Saluting }
+public enum PlayerState { Idle, MoveBackwards, Run, Walk, Jumping, Firing, Saluting, OnAir }
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float velocidadGiro = 120f;
     private float velocidadVertical = 0f;
     public float gravedad = 9.8f;
+    public float fuerzaDeSalto = 8f;
 
     private CharacterController characterController;
     private Animator animator;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private InputAction fireAction;
     private InputAction saluteAction;
     private InputAction runAction;
+    private InputAction changeCameraModeAction;
 
     // Input Storage
     private Vector2 moveValue;
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private bool firePressed;
     private bool salutePressed;
     private bool runPressed;
+
+    public event Action OnCameraToggleRequested;
 
     private void Start()
     {
@@ -48,11 +52,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        moveAction = playerInput.actions["Move"];
-        jumpAction = playerInput.actions["Jump"];
-        fireAction = playerInput.actions["Fire"];
-        saluteAction = playerInput.actions["Salute"];
-        runAction = playerInput.actions["Run"];
+        moveAction = playerInput.actions["Move"]; // awsd
+        jumpAction = playerInput.actions["Jump"];  // space
+        fireAction = playerInput.actions["Fire"]; // left click
+        saluteAction = playerInput.actions["Salute"]; // G
+        runAction = playerInput.actions["Run"]; // shift
+        changeCameraModeAction  = playerInput.actions["ChangeCameraMode"];
     }
 
     private void Update()
@@ -72,11 +77,18 @@ public class PlayerController : MonoBehaviour
         firePressed = fireAction.WasPressedThisFrame();
         salutePressed = saluteAction.WasPressedThisFrame();
         runPressed = runAction.IsPressed();
+        if (changeCameraModeAction.WasReleasedThisFrame()){
+            OnCameraToggleRequested.Invoke();
+        }
     }
 
     private void updateState()
     {
-        if (moveValue.y == 0)
+        if (!characterController.isGrounded)
+        {
+            currentState = PlayerState.OnAir;
+        }
+        else if (moveValue.y == 0)
         {
             currentState = PlayerState.Idle;
         }
@@ -94,8 +106,16 @@ public class PlayerController : MonoBehaviour
         }
 
         if (firePressed) currentState = PlayerState.Firing;
-        if (salutePressed) currentState = PlayerState.Saluting;
-        if (jumpPressed && characterController.isGrounded) currentState = PlayerState.Jumping;
+        if (salutePressed)
+        {
+            Debug.Log("Salute State");
+            currentState = PlayerState.Saluting;
+        }
+        if (jumpPressed && characterController.isGrounded)
+        {
+            Debug.Log("Jumping State");
+            currentState = PlayerState.Jumping;
+        }
     }
 
     private void updateAction()
@@ -105,7 +125,8 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0f, anguloGiro, 0f);
 
         // Gravity
-        if (characterController.isGrounded){
+        if (characterController.isGrounded)
+        {
             velocidadVertical = -0.5f;
         }
         else
@@ -132,8 +153,10 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("Speed", 1f);
                 break;
             case PlayerState.Jumping:
+                velocidadVertical = fuerzaDeSalto;
                 animator.SetTrigger("Jump");
-                movimientoLocal = new Vector3(0f, 0f, moveValue.y * (velocidadAndando * 0.5f));
+                break;
+            case PlayerState.OnAir:
                 break;
             case PlayerState.Firing:
                 animator.SetTrigger("Fire");
@@ -142,7 +165,6 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("Salute");
                 break;
         }
-
         //  movement
         Vector3 movimientoMundo = transform.TransformDirection(movimientoLocal);
         movimientoMundo.y = velocidadVertical;

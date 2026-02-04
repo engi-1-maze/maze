@@ -43,6 +43,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ChangeCameraMode",
+                    "type": "Button",
+                    "id": "5c8162b1-c99b-4a6c-8f36-b82902be40d5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Fire",
                     "type": "Button",
                     "id": "4613ff19-3eec-450d-9ebc-1dd804f0ae31",
@@ -64,7 +73,7 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -511,6 +520,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Salute",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c90b7393-4367-4936-a7ed-60255f404780",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeCameraMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
