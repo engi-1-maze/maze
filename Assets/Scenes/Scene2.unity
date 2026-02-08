@@ -457,8 +457,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 96689974}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &96689973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 96689972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &96689974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96689973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!1 &97330736
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +571,123 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97330736}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &123406167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123406168}
+  - component: {fileID: 123406172}
+  - component: {fileID: 123406171}
+  - component: {fileID: 123406170}
+  - component: {fileID: 123406169}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &123406168
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123406167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 20.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1457837768}
+  m_Father: {fileID: 1037427010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 291.7, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &123406169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123406167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e994034a6c656f4892f1805074ce703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  score: 0
+  scoreText: {fileID: 1457837769}
+--- !u!114 &123406170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123406167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &123406171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123406167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &123406172
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123406167}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!208 &132335216
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -602,6 +742,7 @@ GameObject:
   - component: {fileID: 141039066}
   - component: {fileID: 141039065}
   - component: {fileID: 141039067}
+  - component: {fileID: 141039068}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -636,8 +777,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141039064}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000015258789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -655,6 +796,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fc69afd4f55474d8460ff9fc6d9174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitGame
+--- !u!114 &141039068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141039064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e994034a6c656f4892f1805074ce703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  score: 0
+  scoreText: {fileID: 1457837769}
 --- !u!1 &152961516
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +825,7 @@ GameObject:
   - component: {fileID: 152961518}
   - component: {fileID: 152961522}
   - component: {fileID: 152961523}
+  - component: {fileID: 152961524}
   m_Layer: 9
   m_Name: Enemy (5)
   m_TagString: Enemy
@@ -842,6 +998,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &152961524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152961516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 2100951217}
+  scoreManager: {fileID: 141039068}
+  detectDistance: 2
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
 --- !u!1001 &174520642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -931,6 +1107,7 @@ GameObject:
   - component: {fileID: 200452183}
   - component: {fileID: 200452187}
   - component: {fileID: 200452188}
+  - component: {fileID: 200452189}
   m_Layer: 9
   m_Name: Enemy (2)
   m_TagString: Enemy
@@ -1103,6 +1280,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &200452189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200452181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 2100951217}
+  scoreManager: {fileID: 141039068}
+  detectDistance: 2
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
 --- !u!1 &341574657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,8 +2127,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667926311}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &667926310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 667926309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &667926311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667926310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!4 &677016586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7461605776435805292, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
@@ -2294,6 +2514,7 @@ GameObject:
   - component: {fileID: 768836737}
   - component: {fileID: 768836741}
   - component: {fileID: 768836742}
+  - component: {fileID: 768836743}
   m_Layer: 9
   m_Name: Enemy (3)
   m_TagString: Enemy
@@ -2466,6 +2687,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &768836743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768836735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 2100951217}
+  scoreManager: {fileID: 141039068}
+  detectDistance: 2
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
 --- !u!1 &802282810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,6 +2763,7 @@ GameObject:
   - component: {fileID: 830054771}
   - component: {fileID: 830054772}
   - component: {fileID: 830054773}
+  - component: {fileID: 830054774}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -2694,6 +2936,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &830054774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830054766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 2100951217}
+  scoreManager: {fileID: 141039068}
+  detectDistance: 2
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
 --- !u!4 &847354570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7461605776435805292, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
@@ -3301,6 +3563,7 @@ RectTransform:
   - {fileID: 901104418}
   - {fileID: 1029178813}
   - {fileID: 1596584029}
+  - {fileID: 123406168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3485,8 +3748,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1078652614}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &1078652613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 1078652612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1078652614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078652613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!1001 &1086101324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3781,8 +4067,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1216618107}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &1216618106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 1216618105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1216618107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216618106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!1001 &1233883289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4041,6 +4350,7 @@ GameObject:
   - component: {fileID: 1348111023}
   - component: {fileID: 1348111027}
   - component: {fileID: 1348111028}
+  - component: {fileID: 1348111029}
   m_Layer: 9
   m_Name: Enemy (4)
   m_TagString: Enemy
@@ -4213,6 +4523,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1348111029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348111021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 2100951217}
+  scoreManager: {fileID: 141039068}
+  detectDistance: 2
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
 --- !u!1 &1354652796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4718,6 +5048,142 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453045252}
+  m_CullTransparentMesh: 1
+--- !u!1 &1457837767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1457837768}
+  - component: {fileID: 1457837770}
+  - component: {fileID: 1457837769}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1457837768
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457837767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 123406168}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1457837769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457837767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Score: 0'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1457837770
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457837767}
   m_CullTransparentMesh: 1
 --- !u!95 &1476499306
 Animator:
@@ -5362,8 +5828,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1596974437}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &1596974436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 1596974435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1596974437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596974436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!1 &1620570859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5896,6 +6385,7 @@ GameObject:
   - component: {fileID: 1838919738}
   - component: {fileID: 1838919737}
   - component: {fileID: 1838919736}
+  - component: {fileID: 1838919742}
   m_Layer: 9
   m_Name: Enemy (6)
   m_TagString: Enemy
@@ -6068,6 +6558,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838919734}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1838919742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838919734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 2100951217}
+  scoreManager: {fileID: 141039068}
+  detectDistance: 2
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
+--- !u!1 &1852729907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852729909}
+  - component: {fileID: 1852729908}
+  m_Layer: 0
+  m_Name: TimeBonusScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1852729908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852729907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88df9ede17e382f40aec5ad052b5cfe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeBonusScore
+  scoreManager: {fileID: 0}
+  cronometro: {fileID: 0}
+  maxTime: 300
+  bonusScore: 50
+--- !u!4 &1852729909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852729907}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1185.1807, y: 328.46884, z: 58.41196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1864671845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6123,8 +6681,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864671847}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &1864671846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 1864671845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1864671847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864671846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!1001 &1875279544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6180,8 +6761,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1875279546}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &1875279545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 1875279544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1875279546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875279545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!1 &1894837785
 GameObject:
   m_ObjectHideFlags: 0
@@ -6192,6 +6796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894837787}
   - component: {fileID: 1894837786}
+  - component: {fileID: 1894837788}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -6236,6 +6841,26 @@ Transform:
   - {fileID: 1838919735}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894837788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894837785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 0}
+  scoreManager: {fileID: 0}
+  detectDistance: 8
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
 --- !u!1 &1897318391
 GameObject:
   m_ObjectHideFlags: 0
@@ -6432,6 +7057,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4753028538822310, guid: b58fdf950bf832348af4bfaa2fd9f743, type: 3}
   m_PrefabInstance: {fileID: 1956301729}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1995027292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995027294}
+  - component: {fileID: 1995027293}
+  m_Layer: 0
+  m_Name: DeathScoreReset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1995027293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995027292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530c05ebc84344e45aa5d5be01a37e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathScoreReset
+  scoreManager: {fileID: 0}
+--- !u!4 &1995027294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995027292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1185.1807, y: 328.46884, z: 58.41196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2012038041
 GameObject:
   m_ObjectHideFlags: 0
@@ -6553,6 +7223,7 @@ GameObject:
   - component: {fileID: 2054154487}
   - component: {fileID: 2054154491}
   - component: {fileID: 2054154492}
+  - component: {fileID: 2054154493}
   m_Layer: 9
   m_Name: Enemy (1)
   m_TagString: Enemy
@@ -6725,6 +7396,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2054154493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054154485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3906e777eb2ff204e989ee83473e3019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyScoreByDistance
+  player: {fileID: 2100951217}
+  scoreManager: {fileID: 141039068}
+  detectDistance: 2
+  detectPenalty: 20
+  hitDistance: 1.2
+  hitPenalty: 10
+  hitCooldown: 1.5
+  startDelay: 1.5
 --- !u!1 &2079780860
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,6 +7811,9 @@ GameObject:
   - component: {fileID: 1649752720506374574}
   - component: {fileID: 1699470175494777513}
   - component: {fileID: 8792393237526303763}
+  - component: {fileID: 8792393237526303766}
+  - component: {fileID: 8792393237526303765}
+  - component: {fileID: 8792393237526303764}
   m_Layer: 9
   m_Name: Exit
   m_TagString: Untagged
@@ -63145,6 +63839,49 @@ MonoBehaviour:
   cronometro: {fileID: 1059397720}
   textoLlegada: {fileID: 1291460000}
   play: {fileID: 956518825}
+--- !u!114 &8792393237526303764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53824309926751819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88df9ede17e382f40aec5ad052b5cfe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeBonusScore
+  scoreManager: {fileID: 141039068}
+  cronometro: {fileID: 1059397720}
+  maxTime: 300
+  bonusScore: 50
+--- !u!114 &8792393237526303765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53824309926751819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edf572137610844fb916aed938f93a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExitScore
+  scoreManager: {fileID: 141039068}
+  scoreForFinish: 100
+--- !u!114 &8792393237526303766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53824309926751819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530c05ebc84344e45aa5d5be01a37e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathScoreReset
+  scoreManager: {fileID: 141039068}
 --- !u!4 &8797049510815782502
 Transform:
   m_ObjectHideFlags: 0
@@ -63354,8 +64091,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8821983859237659382}
   m_SourcePrefab: {fileID: 100100000, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+--- !u!1 &8821983859237659381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7193828216547974744, guid: 6498cab6c551e4847bfb49c805290835, type: 3}
+  m_PrefabInstance: {fileID: 8821983859237659380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8821983859237659382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8821983859237659381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d56766ea1ef45bd1a137f209db01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorMoveScore
+  scoreManager: {fileID: 141039068}
+  scoreForDoor: 50
+  openDistance: 0.05
 --- !u!23 &8824915235763832520
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -66541,8 +67301,10 @@ SceneRoots:
   - {fileID: 1037427010}
   - {fileID: 566267058}
   - {fileID: 1059397721}
-  - {fileID: 954529335}
   - {fileID: 141039066}
+  - {fileID: 1995027294}
+  - {fileID: 1852729909}
+  - {fileID: 954529335}
   - {fileID: 1620570862}
   - {fileID: 1381635740}
   - {fileID: 1894837787}
