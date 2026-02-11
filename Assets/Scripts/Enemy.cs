@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     [Header("Configuración de Ataque y Salud")]
-    public Transform player; // Arrastra aquí al Jugador
+    public Transform player;
     public float distanciaAtaque = 1.5f;
     public float danioNormal = 25f;
     public float intervaloAtaque = 1.5f;
@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     [Range(0, 100)] public float probabilidadMuerteInstantanea = 15f;
 
     [Header("Configuración de Patrullaje y Visión")]
-    public Transform patrolPoints; // Objeto que contiene los puntos (A, B, etc)
+    public Transform patrolPoints;
     public float reachDistance = 0.7f;
     public float viewDistance = 10f;
     [Range(0, 180)] public float viewAngle = 70f;
@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent agent;
     private Transform pA, pB;
     private int currentTarget;
-    private bool warned;
 
     private void Awake()
     {
@@ -31,7 +30,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        // Asignamos los puntos de patrulla según el orden del enemigo
         int enemyIndex = transform.GetSiblingIndex();
         AssignPatrolPair(enemyIndex);
 
@@ -42,10 +40,8 @@ public class Enemy : MonoBehaviour
     {
         if (SeePlayer())
         {
-            // Si nos ve, nos persigue
             agent.SetDestination(player.position);
 
-            // Si está lo suficientemente cerca, intenta atacar
             float dist = Vector3.Distance(transform.position, player.position);
             if (dist < distanciaAtaque && Time.time >= tiempoSiguienteAtaque)
             {
@@ -55,7 +51,6 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            // Si no nos ve, sigue patrullando
             Patrol();
         }
     }
@@ -79,7 +74,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void SeePlayer() // Comprueba si el jugador está en el campo de visión
+    // HE CAMBIADO 'void' POR 'bool' AQUÍ ABAJO
+    bool SeePlayer()
     {
         if (player == null) return false;
 
