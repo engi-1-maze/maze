@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Configuraci�n de Ataque y Salud")]
+    [Header("Configuración de Ataque y Salud")]
     public Transform player;
     public float distanciaAtaque = 1.5f;
     public float danioNormal = 25f;
@@ -12,12 +12,17 @@ public class Enemy : MonoBehaviour
     private float tiempoSiguienteAtaque = 0f;
     [Range(0, 100)] public float probabilidadMuerteInstantanea = 15f;
 
-    [Header("Configuraci�n de Patrullaje y Visi�n")]
+    [Header("Configuración de Patrullaje y Visión")]
     public Transform patrolPoints;
     public float reachDistance = 0.7f;
     public float viewDistance = 10f;
     [Range(0, 180)] public float viewAngle = 70f;
     public LayerMask obstacleMask;
+
+    [Header("Salud del Enemigo")]
+    public int vidaMaxima = 3;          // 🔴 VIDA AÑADIDA
+    private int vidaActual;
+    private bool estaMuerto = false;    // 🔴 CONTROL DE MUERTE
 
     private NavMeshAgent agent;
     private Transform pA, pB;
@@ -26,6 +31,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        vidaActual = vidaMaxima; // 🔴 Inicializamos vida
     }
 
     private void Start()
@@ -38,6 +44,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (estaMuerto) return; // 🔴 Si está muerto no hace nada
+
         if (SeePlayer())
         {
             agent.SetDestination(player.position);
@@ -64,7 +72,7 @@ public class Enemy : MonoBehaviour
 
         if (dado <= probabilidadMuerteInstantanea)
         {
-            Debug.Log("�ATAQUE DEFINITIVO!");
+            Debug.Log("¡ATAQUE DEFINITIVO!");
             IrAGameOver();
         }
         else
@@ -74,7 +82,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // HE CAMBIADO 'void' POR 'bool' AQU� ABAJO
     bool SeePlayer()
     {
         if (player == null) return false;
@@ -129,5 +136,35 @@ public class Enemy : MonoBehaviour
     {
         SceneManager.LoadScene("Scene2");
         Destroy(this.gameObject);
+    }
+
+    // 🔴 ==============================
+    // 🔴 SISTEMA DE DISPARO AÑADIDO
+    // 🔴 ==============================
+
+    public void TakeDamage(int damage)
+    {
+        if (estaMuerto) return;
+
+        vidaActual -= damage;
+        Debug.Log("Enemigo recibe daño. Vida restante: " + vidaActual);
+
+        if (vidaActual <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        estaMuerto = true;
+
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.enabled = false;
+        }
+
+        Destroy(gameObject);
     }
 }
