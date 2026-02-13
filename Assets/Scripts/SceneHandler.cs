@@ -2,18 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ScenesHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
     public void IrAJuego()
     {
         SceneManager.LoadScene("Scene2");
@@ -28,6 +17,11 @@ public class ScenesHandler : MonoBehaviour
     public void IrAMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Destroy(this.gameObject);
+    }
+    public void IrACreditos()
+    {
+        SceneManager.LoadScene("Creditos");
         Destroy(this.gameObject);
     }
 }
