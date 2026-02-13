@@ -1631,6 +1631,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391504418}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &396241079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6938182659728478812, guid: a4087ebda296ec349b88effabf48c519, type: 3}
+  m_PrefabInstance: {fileID: 1086101324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &397725395
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,17 +2110,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1089567771}
     m_Modifications:
+    - target: {fileID: 3684631074766390246, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
+      propertyPath: salida
+      value: 
+      objectReference: {fileID: 396241079}
     - target: {fileID: 5835478933327440067, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 115.56513
+      value: 115.76
       objectReference: {fileID: 0}
     - target: {fileID: 5835478933327440067, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000047683716
+      value: 0.078
       objectReference: {fileID: 0}
     - target: {fileID: 5835478933327440067, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -56
+      value: -56.164
       objectReference: {fileID: 0}
     - target: {fileID: 5835478933327440067, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2147,11 +2156,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6911220653033808057, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.313
+      value: -1.419
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911220653033808057, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 6911220653033808057, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.011
+      value: -0.403
       objectReference: {fileID: 0}
     - target: {fileID: 7160014726117064025, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_Name
@@ -3235,6 +3248,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901104417}
   m_CullTransparentMesh: 1
+--- !u!4 &907809496 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6911220653033808057, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
+  m_PrefabInstance: {fileID: 613832690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &908854724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4027,13 +4045,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 725726604604246107, guid: a4087ebda296ec349b88effabf48c519, type: 3}
+      propertyPath: salida
+      value: 
+      objectReference: {fileID: 907809496}
     - target: {fileID: 6923078928933157512, guid: a4087ebda296ec349b88effabf48c519, type: 3}
       propertyPath: m_Name
       value: TeleportA
       objectReference: {fileID: 0}
     - target: {fileID: 6938182659728478812, guid: a4087ebda296ec349b88effabf48c519, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.03
+      value: 1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938182659728478812, guid: a4087ebda296ec349b88effabf48c519, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6938182659728478812, guid: a4087ebda296ec349b88effabf48c519, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4064,7 +4090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e1f68b599f11e41a29dd053da24292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleport
-  salida: {fileID: 0}
+  salida: {fileID: 907809496}
 --- !u!1 &1089567770
 GameObject:
   m_ObjectHideFlags: 0
@@ -42493,6 +42519,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeleportA
       objectReference: {fileID: 0}
+    - target: {fileID: 6938182659728478812, guid: a4087ebda296ec349b88effabf48c519, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6938182659728478812, guid: a4087ebda296ec349b88effabf48c519, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.98
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -67643,6 +67677,14 @@ PrefabInstance:
     - target: {fileID: 5835478933327440067, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911220653033808057, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.018
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911220653033808057, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.121
       objectReference: {fileID: 0}
     - target: {fileID: 6911220653033808057, guid: 6c75e8ac67862044fb5938ebb395afa0, type: 3}
       propertyPath: m_LocalPosition.z
