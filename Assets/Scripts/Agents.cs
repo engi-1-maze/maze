@@ -29,6 +29,8 @@ public class Agents: MonoBehaviour
        
         foreach (NavMeshAgent agente in agent) 
         {
+            if(agente == null) continue;
+            if(!agente.isActiveAndEnabled || agente.isOnNavMesh) continue;
             agente.SetDestination(Objetivo.transform.position);
         }
     }

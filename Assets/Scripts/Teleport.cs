@@ -16,5 +16,4 @@ public class Teleport : MonoBehaviour
             if (controller != null) controller.enabled = true;
         }
     }
-
 }
