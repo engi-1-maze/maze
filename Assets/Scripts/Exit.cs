@@ -4,18 +4,16 @@ using UnityEngine.UI;
 
 public class Exit : MonoBehaviour
 {
-    public Cronometro cronometro;        // referencia al script del cronómetro
+    public Cronometro cronometro;        // referencia al script del cronï¿½metro
     public TextMeshProUGUI textoLlegada; // texto del letrero final
     public UnityEngine.UI.Button play;
-
-    bool activado = false;
 
     private void OnTriggerEnter(Collider other)
     {
      
         if (other.CompareTag("Player"))
         {
-            // Parar el cronómetro y obtener el tiempo
+            // Parar el cronï¿½metro y obtener el tiempo
             float tiempoTotal = 0f;
             if (cronometro != null)
             {
@@ -26,7 +24,7 @@ public class Exit : MonoBehaviour
             if (textoLlegada != null)
             {
                 textoLlegada.gameObject.SetActive(true);
-                textoLlegada.text = "¡¡Llegaste!!\nHas tardado " + tiempoTotal.ToString("F2") + " segundos";
+                textoLlegada.text = "ï¿½ï¿½Llegaste!!\nHas tardado " + tiempoTotal.ToString("F2") + " segundos";
                 play.gameObject.SetActive(true);
                
             }

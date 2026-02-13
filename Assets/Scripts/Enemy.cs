@@ -73,12 +73,11 @@ public class Enemy : MonoBehaviour
         if (dado <= probabilidadMuerteInstantanea)
         {
             Debug.Log("¡ATAQUE DEFINITIVO!");
-            IrAGameOver();
+            scriptSalud.MuerteInstantanea();
         }
         else
         {
             scriptSalud.RecibirDanio(danioNormal);
-            if (scriptSalud.saludActual <= 0) IrAGameOver();
         }
     }
 
@@ -122,20 +121,6 @@ public class Enemy : MonoBehaviour
 
         pA = patrolPoints.GetChild(a);
         pB = patrolPoints.GetChild(b);
-    }
-
-    void IrAGameOver()
-    {
-        transform.SetParent(null);
-        DontDestroyOnLoad(this.gameObject);
-        SceneManager.LoadScene("GameOver");
-        Invoke("CargarEscena2", 3f);
-    }
-
-    void CargarEscena2()
-    {
-        SceneManager.LoadScene("Scene2");
-        Destroy(this.gameObject);
     }
 
     // 🔴 ==============================

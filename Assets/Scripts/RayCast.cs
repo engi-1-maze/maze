@@ -59,7 +59,7 @@ public class RayCast : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning($"Hit a {hit.collider.name} pero no hay DoorButton en el ni en sus padres");
+                Debug.Log($"Hit a {hit.collider.name} pero no hay DoorButton en el ni en sus padres");
             }
 
             // ENEMIGOS

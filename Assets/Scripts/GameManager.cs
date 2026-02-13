@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     Vector3 posicionInicial;
     Quaternion rotacionInicial;
-
+    
     void Start()
     {
 
@@ -28,6 +27,7 @@ public class GameManager : MonoBehaviour
             posicionInicial = player.position;
             rotacionInicial = player.rotation;
         }
+        ReiniciarJuego();
     }
     public void ReiniciarJuego()
     {
@@ -50,12 +50,12 @@ public class GameManager : MonoBehaviour
             textoLlegada.text = "";
         }
 
-        //Desactivo el botón 
+        //Desactivo el botï¿½n 
         if(play!=null)
         {
             play.gameObject.SetActive(false);
         }
-        // Reseteo el cronómetro
+        // Reseteo el cronï¿½metro
         if (cronometro != null)
         {
             cronometro.IniciarCronometro();
