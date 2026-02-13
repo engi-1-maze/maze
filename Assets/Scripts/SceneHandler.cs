@@ -24,4 +24,10 @@ public class ScenesHandler : MonoBehaviour
         SceneManager.LoadScene("GameOver");
         Destroy(this.gameObject);
     }
+
+    public void IrAMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Destroy(this.gameObject);
+    }
 }
