@@ -5892,11 +5892,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896768712539786053, guid: 0342bdb51d14a8140b54adf15cdef841, type: 3}
       propertyPath: fuerzaDeSalto
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5896768712539786053, guid: 0342bdb51d14a8140b54adf15cdef841, type: 3}
       propertyPath: velocidadAndando
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5896768712539786053, guid: 0342bdb51d14a8140b54adf15cdef841, type: 3}
       propertyPath: velocidadCorriendo
@@ -5904,7 +5904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896768712539786053, guid: 0342bdb51d14a8140b54adf15cdef841, type: 3}
       propertyPath: velocidadHaciaAtras
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6242614437996536682, guid: 0342bdb51d14a8140b54adf15cdef841, type: 3}
       propertyPath: m_Layer
